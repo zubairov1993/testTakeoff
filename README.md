@@ -1,5 +1,13 @@
 # Takeoff
 
+1. Склонировать репозиторий.
+2. Выполнить устоновку пакетов npm install
+3. Запустить приложение npm start
+4. Данные для входа: Email: take@off.com, Password: 111111
+5. Добавлять/редактировать/удалять контакты
+
+Авторизация через firebase, контакты хранятся в localStorage
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
 ## Development server
