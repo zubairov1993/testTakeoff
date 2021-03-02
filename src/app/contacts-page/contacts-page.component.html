@@ -1,0 +1,52 @@
+<div>
+  <div class="form-control">
+    <input type="text" placeholder="Поиск по имени" [(ngModel)]="searchStr" />
+    <button mat-raised-button color="primary" (click)="createContact()">
+      Создать
+    </button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Имя</th>
+        <th>Телефон</th>
+        <th>Email</th>
+        <th>Действие</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="contacts$.value; else loading">
+      <tr
+        *ngFor="
+          let contact of contacts$ | async | searchContacts: searchStr;
+          let idx = index
+        "
+      >
+        <td>{{ idx + 1 }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>{{ contact.email }}</td>
+        <td>
+          <div class="btns">
+            <span
+              class="material-icons create"
+              (click)="editContact(contact.id)"
+            >
+              create
+            </span>
+            <span
+              class="material-icons delete"
+              (click)="removeContact(contact.id)"
+            >
+              delete
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #loading>
+  <p class="text-center">Идет загрузка...</p>
+</ng-template>

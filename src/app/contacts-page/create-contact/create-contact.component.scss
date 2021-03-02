@@ -1,0 +1,26 @@
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding-bottom: 50px;
+
+  .create {
+    margin-bottom: 20px;
+
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .create-btns {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    .btn-cancel {
+      border: 0.5px solid #ccc;
+      margin-left: 10px;
+    }
+  }
+}

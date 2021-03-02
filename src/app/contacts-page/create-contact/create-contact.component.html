@@ -1,0 +1,39 @@
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form">
+    <div class="create">
+      <div class="create__inputs">
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Phone</mat-label>
+          <input
+            formControlName="phone"
+            type="number"
+            matInput
+            placeholder="Phone"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="create-btns">
+      <button
+        [disabled]="form.invalid"
+        mat-flat-button
+        color="primary"
+        (click)="createContact()"
+      >
+        Create
+      </button>
+      <button class="btn-cancel" (click)="cancelDialog()" mat-flat-button>
+        Cancel
+      </button>
+    </div>
+  </form>
+</mat-dialog-content>
